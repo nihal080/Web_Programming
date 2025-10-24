@@ -1,0 +1,57 @@
+body{
+background-color:purple;
+}
+
+
+h2{
+color: beige; 
+text-align:center;  
+font-family: 'Comic Sans MS', cursive; 
+font-style: italic; 
+}
+
+p{
+color: yellow;
+}
+
+
+h3{
+color: beige;
+}
+
+ol, ul{
+color: yellow;
+}
+
+table {
+border-collapse: collapse;
+width: 30%;
+}
+
+th, td {
+border: 1px solid beige;
+padding: 8px;
+text-align: left;
+color:brown;
+}
+
+th {
+background-color: red;
+color: white;
+}
+
+tr:nth-child(even) {
+background-color: green;
+}
+
+tr:nth-child(even):hover {
+background-color: yellow;
+}
+
+tr{
+background-color: blue;
+}
+
+tr:hover {
+background-color: yellow;
+}
