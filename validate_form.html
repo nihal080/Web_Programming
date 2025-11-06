@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Validation Form</title>
+<style>
+body {    
+    background-color: beige;
+    padding: 10px;
+}
+
+form {
+    border: 3px solid black;
+    width: 400px;
+    background-color: beige;
+    padding: 20px;
+    margin: auto;
+    border-radius: 8px;
+}
+
+label {
+    display: inline-block;
+    width: 140px;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"] {
+    border: 1px solid black;
+    width: 220px;
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+button[type="submit"] {
+    background-color: beige;
+    padding: 5px 10px;
+    border: 2px solid black;
+
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: brown;
+    color: white;
+}
+
+</style>
+</head>
+<body>
+
+<h2 style="text-align: center;">Validation Form</h2>
+
+<form onsubmit="return validateForm()">
+  <label>Name</label>
+  <input type="text" id="name" name="name" required><br>
+
+  <label>Password</label>
+  <input type="password" id="password" name="password" required><br>
+
+  <label>Retype Password</label>
+
+  <input type="password" id="retypePassword" name="retypePassword" required><br>
+
+  <label>Mobile No</label>
+  <input type="tel" id="mobile" name="mobile" pattern="\d{10}" maxlength="10" title="Invalid Number" required><br>
+  
+  <center>
+  <button type="submit">Submit</button>
+  </center>
+</form>
+
+<script>
+function validateForm() 
+{
+const name = document.getElementById('name').value.trim();
+const password = document.getElementById('password').value;
+const mobile = document.getElementById('mobile').value.trim();
+
+
+if (name === "") 
+{
+    alert("Please enter your name.");
+    return false;
+}
+
+if (/^\d+$/.test(name)) 
+{
+    alert("Name should not be only digits.");
+    return false;
+}
+
+if (password.length < 8) 
+{
+    alert("Password should be at least 8 characters long.");
+    return false;
+}
+
+const retypePassword = document.getElementById('retypePassword').value;
+
+if (password !== retypePassword) 
+{
+
+    alert("Passwords do not match.");
+
+    return false;
+}
+
+const mobilePattern = /^\d{10}$/;
+if (!mobilePattern.test(mobile)) 
+{
+    alert("Please enter a valid 10-digit mobile number.");
+    return false;
+}
+
+alert("Form submitted successfully!");
+return true;
+}
+</script>
+
+</body>
+</html>
+
+      
