@@ -1,27 +1,3 @@
-body{
-background-color:purple;
-}
-
-
-h2{
-color: beige; 
-text-align:center;  
-font-family: 'Comic Sans MS', cursive; 
-font-style: italic; 
-}
-
-p{
-color: yellow;
-}
-
-
-h3{
-color: beige;
-}
-
-ol, ul{
-color: yellow;
-}
 
 table {
 border-collapse: collapse;
@@ -55,3 +31,4 @@ background-color: blue;
 tr:hover {
 background-color: yellow;
 }
+
