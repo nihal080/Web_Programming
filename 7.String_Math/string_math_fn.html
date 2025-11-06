@@ -1,0 +1,57 @@
+<html>
+<body>
+<h1>String Math Properties</h1>
+<script>
+
+document.writeln("<h3>")
+document.writeln("STRING FUNCTIONS","<br>")
+
+var s1="hello hai"
+document.writeln(typeof s1,"<br>")
+
+var s2= new String("WELCOME bye")
+document.writeln(typeof s2,"<br>")
+
+s3=s2.trim()
+document.writeln(s3,"<br>")
+
+document.writeln(s1.toLowerCase().concat(s2.toUpperCase()), "<br>")
+
+document.writeln("slice(0,7) : ", s1.slice(0,7), "<br>")
+document.writeln("slice(-11,-1) : ", s1.slice(-11, -1), "<br>")
+
+document.writeln("indexOf('o') : ", s1.indexOf("o"), "<br>")
+document.writeln("lastIndexOf('o') : ", s1.lastIndexOf("o"), "<br>")
+
+document.writeln("search('o') : ", s1.search("o"), "<br>")  
+document.writeln("substr(0,5): ", s1.substr(0,5), "<br>")
+
+document.writeln("replace('hello', 'Good Morning'): ", s1.replace("hello", "Good Morning "), "<br>")
+
+document.writeln("charAt(3): ", s1.charAt(3), "<br>")
+
+
+
+document.writeln("MATH OBJECT PROPERTIES","<br>")
+
+
+
+document.writeln("Euler's number is : ",Math.E,"<br>")
+document.writeln("Value of PI is : ",Math.PI,"<br>")
+document.writeln("Square root of 49 is : ",Math.sqrt(49),"<br>")
+document.writeln("cube root of 8 is : ",Math.cbrt(8),"<br>")
+
+
+document.writeln("Log 40 is : ",Math.LN40,"<br>")
+
+document.writeln("Absolute value of -10 is : ",Math.abs(-10),"<br>")
+
+
+
+document.writeln("Maximum of 7,10, 3 and 1 is : ",Math.max(7,10,3,1),"<br>")
+document.writeln("Truncated value of 4.56 is ",Math.trunc(4.56),"<br>")
+
+document.writeln("</h3>")
+</script>
+</body>
+</html>
