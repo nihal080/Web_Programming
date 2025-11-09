@@ -5,30 +5,29 @@ width: 30%;
 }
 
 th, td {
-border: 1px solid beige;
+border: 1px solid black;
 padding: 8px;
 text-align: left;
 color:brown;
 }
 
 th {
-background-color: red;
+background-color: #2c5282;
 color: white;
 }
 
 tr:nth-child(even) {
-background-color: green;
-}
-
-tr:nth-child(even):hover {
-background-color: yellow;
+background-color: #f7fafc;
 }
 
 tr{
-background-color: blue;
+background-color: #bee3f8;
 }
 
 tr:hover {
 background-color: yellow;
 }
+
+
+
 
