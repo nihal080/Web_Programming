@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <html>
 <head>
-<title>Validation Form</title>
+<title>VALIDATION FORM</title>
 <style>
-body {    
-    background-color: beige;
+body {  
+    margin-top:175px;  
+    background-color: brown;
     padding: 10px;
 }
 
@@ -14,7 +14,6 @@ form {
     background-color: beige;
     padding: 20px;
     margin: auto;
-    border-radius: 8px;
 }
 
 label {
@@ -25,22 +24,18 @@ label {
 }
 
 input[type="text"],
-input[type="password"],
-input[type="tel"] {
+input[type="password"]
+{
     border: 1px solid black;
     width: 220px;
     padding: 6px;
-    border-radius: 4px;
     font-size: 14px;
     margin-bottom: 10px;
 }
 
 button[type="submit"] {
     background-color: beige;
-    padding: 5px 10px;
     border: 2px solid black;
-
-    cursor: pointer;
     font-size: 16px;
 }
 
@@ -53,7 +48,7 @@ button[type="submit"]:hover {
 </head>
 <body>
 
-<h2 style="text-align: center;">Validation Form</h2>
+<h2 style="text-align: center;">VALIDATION FORM</h2>
 
 <form onsubmit="return validateForm()">
   <label>Name</label>
@@ -67,7 +62,7 @@ button[type="submit"]:hover {
   <input type="password" id="retypePassword" name="retypePassword" required><br>
 
   <label>Mobile No</label>
-  <input type="tel" id="mobile" name="mobile" pattern="\d{10}" maxlength="10" title="Invalid Number" required><br>
+  <input type="text" id="mobile" name="mobile" required><br>
   
   <center>
   <button type="submit">Submit</button>
@@ -75,49 +70,53 @@ button[type="submit"]:hover {
 </form>
 
 <script>
-function validateForm() 
-{
+
+function validateForm() {
 const name = document.getElementById('name').value.trim();
 const password = document.getElementById('password').value;
 const mobile = document.getElementById('mobile').value.trim();
-
-
-if (name === "") 
-{
-    alert("Please enter your name.");
-    return false;
-}
-
-if (/^\d+$/.test(name)) 
-{
-    alert("Name should not be only digits.");
-    return false;
-}
-
-if (password.length < 8) 
-{
-    alert("Password should be at least 8 characters long.");
-    return false;
-}
-
 const retypePassword = document.getElementById('retypePassword').value;
 
-if (password !== retypePassword) 
-{
+if (name === "") {
+alert("Please enter your name.");
+return false;
+} 
 
-    alert("Passwords do not match.");
-
-    return false;
+else if (!/^[A-Za-z\s]+$/.test(name)) {
+alert("Name should contain only alphabets!");
+return false;
 }
 
-const mobilePattern = /^\d{10}$/;
-if (!mobilePattern.test(mobile)) 
-{
-    alert("Please enter a valid 10-digit mobile number.");
-    return false;
+if (password === "") {
+alert("Enter the Password");
+return false;
+} 
+else if (password.length < 8) {
+alert("Password should be at least 8 characters long.");
+return false;
 }
 
-alert("Form submitted successfully!");
+if (retypePassword !== password) {
+alert("Passwords do not match.");
+return false;
+}
+
+if (mobile === "") {
+alert("Please enter your mobile number.");
+return false;
+} 
+
+else if (!/^\d+$/.test(mobile)) {
+alert("Invalid Phone Number! Only digits are allowed.");
+return false;
+}
+
+else if (mobile.length !== 10) {
+alert('Not a Valid Phone Number (need 10 digits)');
+return false;
+}
+
+alert('Thank You for Registration');
 return true;
 }
 </script>
