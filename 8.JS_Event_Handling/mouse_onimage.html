@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>JS EVENT HANDLING</title>
+<style>
+
+body{
+background-color:black;
+}
+
+img {
+max-width: 100%;
+border: 2px solid cyan;
+padding: 5px;
+height: auto;
+}
+
+#p1{
+font-size:15px;
+color:white;
+}
+
+</style>
+</head>
+<body>
+
+<center>
+<h1 style="color:white;">REAL MADRID C.F</h1>
+<img src="image2.png" id = "img" onmouseover="one()" onmouseout="two()">
+<b><p id = "p1">Real Madrid Club de Fútbol, commonly referred to as Real Madrid, is a Spanish professional association football club based in Madrid. The club competes in La Liga, the top tier of Spanish football.Founded in 1902 as Madrid Football Club, the club has traditionally worn a white home kit. The honorific title 'Real' is Spanish for "Royal" and was bestowed by Alfonso XIII in 1920. In 2024, it became the first football club to make €1 billion ($1.08bn) in revenue.</p></b>
+</center>
+
+<script>
+function one() {
+document.getElementById("img").src = "image1.jpg";
+document.getElementById("p1").innerHTML= "ON-MOUSE-OVER";
+document.getElementById("p1").style.color= "yellow";
+document.querySelector("h1").style.display = "none";
+}
+
+function two() {
+document.getElementById("img").src = "image3.jpg";
+document.getElementById("p1").innerHTML= "ON-MOUSE-OUT";
+document.getElementById("p1").style.color= "white";
+document.querySelector("h1").style.display = "none";
+}
+</script>
+</body>
+</html>
